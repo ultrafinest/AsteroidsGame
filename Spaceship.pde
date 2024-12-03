@@ -26,4 +26,16 @@ class Spaceship extends Floater
       myXspeed -= ((dAmount) * Math.cos(dRadians));    
       myYspeed -= ((dAmount) * Math.sin(dRadians));       
     }   
+    public float getCenterX(){
+      return (float) myCenterX;
+    }
+    public float getCenterY(){
+      return (float) myCenterY;
+    }
+    public void setCenterX(double newCenterX){
+      myCenterX = newCenterX;
+    }
+    public void setCenterY(double newCenterY){
+      myCenterY = newCenterY;
+    }
 }
