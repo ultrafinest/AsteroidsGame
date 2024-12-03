@@ -9,7 +9,7 @@ public void setup()
   {
     stars[i] = new Star();
   }
-  for(int i = 0; i < (int)(Math.random()*5); i++)
+  for(int i = 0; i < (int)(Math.random()*9 + 4); i++)
   {
     asteroid.add(new Asteroid());
   }
