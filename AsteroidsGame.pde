@@ -23,12 +23,14 @@ public void draw()
   }
   ship.show();
   ship.move();
-  for(int i = 0; i < asteroid.size(); i++)
-  {
+  for (int i = 0; i < asteroid.size(); i++) {
     asteroid.get(i).show();
     asteroid.get(i).move();
-    if(dist(ship.getCenterX(),ship.getCenterY(),asteroid.get(i).getCenterX(), asteroid.get(i).getCenterY()) < 20)
+    if (dist(ship.getCenterX(), ship.getCenterY(), asteroid.get(i).getCenterX(), asteroid.get(i).getCenterY()) < 20) 
+    {
       asteroid.remove(i);
+      i--; 
+    }
   }
 }
 public void keyPressed()
@@ -50,6 +52,9 @@ public void keyPressed()
       ship.hyperspace();
     }
   }
+  ship.move();
+  ship.show();
+}
   ship.move();
   ship.show();
 }
