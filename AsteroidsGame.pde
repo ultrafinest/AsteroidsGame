@@ -1,6 +1,7 @@
 Spaceship ship = new Spaceship();
 Star[] stars = new Star[40];
 ArrayList<Asteroid> asteroid = new ArrayList();
+ArrayList<Bullet> bullets = new ArrayList();
 public void setup() 
 {
   background(0);
@@ -32,6 +33,19 @@ public void draw()
       i--; 
     }
   }
+  for(int i = 0; i < bullets.size(); i++){
+    bullets.get(i).show();
+    bullets.get(i).move();
+      for (int j = 0; j < asteroid.size(); j++) {
+        if (dist(bullets.get(i).getCenterX(), bullets.get(i).getCenterY(), asteroid.get(j).getCenterX(), asteroid.get(j).getCenterY()) < 15) {
+            bullets.remove(i);
+            asteroid.remove(j);
+            asteroid.add(j, new Asteroid());
+            i--;
+            break; 
+        }
+      }
+  }
 }
 public void keyPressed()
 {
@@ -51,7 +65,13 @@ public void keyPressed()
     if(key == 'h' || key == 'H'){
       ship.hyperspace();
     }
+    if(key == ' '){
+      bullets.add(new Bullet(ship));
+    }
   }
+  ship.move();
+  ship.show();
+}
   ship.move();
   ship.show();
 }
