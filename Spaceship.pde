@@ -32,6 +32,15 @@ class Spaceship extends Floater
     public float getCenterY(){
       return (float) myCenterY;
     }
+    public float getXSpeed(){
+      return (float) myXspeed;
+    }
+    public float getYSpeed(){
+      return (float) myYspeed;
+    }
+    public float getMyDirection(){
+      return (float) myPointDirection;
+    }
     public void setCenterX(double newCenterX){
       myCenterX = newCenterX;
     }
