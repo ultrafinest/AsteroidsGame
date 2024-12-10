@@ -72,6 +72,3 @@ public void keyPressed()
   ship.move();
   ship.show();
 }
-  ship.move();
-  ship.show();
-}
